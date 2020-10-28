@@ -55,7 +55,6 @@ public class HeartRateCalculator extends Service {
         List<Double> meanRedIntensities = new ArrayList<>();
         Mat image = new Mat();
         Mat redChannel = new Mat();
-        int frameCount = 0;
         while (videoCapture.read(image)) {
             Core.extractChannel(image, redChannel, 2);
             double frameRedIntensityMean = Core.mean(redChannel).val[0];
